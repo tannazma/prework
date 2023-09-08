@@ -9,7 +9,7 @@ function calculateEnergy(e) {
     console.log(document.querySelector("#ru").value)
 }
 document.querySelector(".calculate").addEventListener("click", function (e) {
-    e.preventDefault
+    // e.preventDefault
     const RU = document.querySelector("#ru")
     const PE = document.querySelector("#pe")
     const SH = document.querySelector("#sh")
