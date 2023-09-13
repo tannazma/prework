@@ -10,7 +10,7 @@ body {
   background-color: #15172b;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 700px;
+  height: 723px;
   padding: 20px;
   width: 384px;
 }
@@ -71,4 +71,7 @@ body {
 }
 .calculate:active {
   background-color: #06b;
+}
+.result {
+  color: white;
 }
