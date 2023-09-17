@@ -16,6 +16,12 @@ form.addEventListener("click", function (e) {
     const SH = document.querySelector("#sh")
     const AR = document.querySelector("#ar")
     const area = (RU.value / (PE.value * SH.value)) * AR.value;
+    const inputFields = document.querySelectorAll("input");
+    for (const inputField of inputFields) {
+        if (inputField.value === "") {
+            return
+        }
+    }
     document.querySelector(".result").innerHTML = `The result is ${area}`
 })
 function validateNumber() {
