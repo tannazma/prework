@@ -14,7 +14,6 @@ body {
   background-color: #15172b;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 720px;
   padding: 20px;
   width: 384px;
 }
@@ -36,15 +35,11 @@ body {
   text-align: center;
 }
 .input-container {
-  height: 50px;
   position: relative;
   width: 100%;
 }
 .input-container label {
   color: white;
-}
-.input-container input {
-  align-items: right;
 }
 input {
   background-color: #303245;
@@ -55,7 +50,7 @@ input {
   font-size: 18px;
   height: 100%;
   outline: 0;
-  padding: 4px 20px 0;
+  padding: 12px;
   width: 100%;
   margin-top: 10px;
 }
