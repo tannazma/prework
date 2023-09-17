@@ -32,7 +32,7 @@ const form = document.querySelector("form");
 form.addEventListener("submit", function () {
     const inputFields = document.querySelectorAll("input");
     for (const inputField of inputFields) {
-        if (inputField.value == "") {
+        if (inputField.value === "") {
             inputField.classList.add("errorBox")
         }
     }
