@@ -30,7 +30,7 @@ function validateNumber() {
 }
 const form = document.querySelector("form");
 form.addEventListener("submit", function () {
-    let inputFields = document.querySelectorAll("input");
+    const inputFields = document.querySelectorAll("input");
     for (const inputField of inputFields) {
         if (inputField.value == "") {
             inputField.classList.add("errorBox")
