@@ -42,6 +42,10 @@ form.addEventListener("click", function () {
             inputField.classList.add("errorBox");
             const errorMessage = inputField.parentElement.querySelector(".error-message");
             errorMessage.innerHTML = "Please write a number"
+        } else {
+            inputField.classList.remove("errorBox");
+            const errorMessage = inputField.parentElement.querySelector(".error-message");
+            errorMessage.innerHTML = ""
         }
     }
 })
