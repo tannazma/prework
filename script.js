@@ -48,9 +48,11 @@ submitButton.addEventListener("click", function () {
 const inputFields = document.querySelectorAll("input");
 for (const inputField of inputFields) {
     inputField.addEventListener("input", function () {
-        inputField.classList.remove("errorBox");
-        const errorMessage = inputField.parentElement.querySelector(".error-message");
-        errorMessage.innerHTML = ""
+        if (inputField.value !== "") {
+            inputField.classList.remove("errorBox");
+            const errorMessage = inputField.parentElement.querySelector(".error-message");
+            errorMessage.innerHTML = ""
+        }
     })
 }
 
