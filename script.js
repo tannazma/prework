@@ -28,8 +28,7 @@ function validateNumber() {
     }
 
 }
-const form = document.querySelector("form");
-form.addEventListener("submit", function () {
+document.querySelector(".calculate").addEventListener("click", function () {
     const inputFields = document.querySelectorAll("input");
     for (const inputField of inputFields) {
         if (inputField.value === "") {
