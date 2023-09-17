@@ -78,7 +78,7 @@ input {
 }
 .result {
   color: white;
-  height:10px
+  height: 10px;
 }
 .errorBox {
   background-color: var(--error-color);
