@@ -39,8 +39,9 @@ form.addEventListener("click", function () {
     const inputFields = document.querySelectorAll("input");
     for (const inputField of inputFields) {
         if (inputField.value === "") {
-            inputField.classList.add("errorBox")
+            inputField.classList.add("errorBox");
+            const errorMessage = inputField.parentElement.querySelector(".error-message");
+            errorMessage.innerHTML = "Please write a number"
         }
     }
 })
-

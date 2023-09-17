@@ -82,3 +82,6 @@ input {
 .errorBox {
   background-color: var(--error-color);
 }
+.error-message {
+  color: red;
+}
