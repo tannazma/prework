@@ -42,7 +42,7 @@ body {
 .input-container input {
   align-items: right;
 }
-.input {
+input {
   background-color: #303245;
   border-radius: 12px;
   border: 0;

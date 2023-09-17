@@ -22,6 +22,14 @@ document.querySelector(".calculate").addEventListener("click", function (e) {
     console.log(area)
     document.querySelector(".result").innerHTML = `The result is ${area}`
 })
+function validateNumber() {
+    let inputFields = document.querySelectorAll("input");
+    let invalidChars = /[^0-9]/
+    for (const inputField of inputFields) {
+        const isValueInvalid = invalidChars.test(inputField.value)
+        if (isValueInvalid) {
+            inputField.value = inputField.value.replace(invalidChars, "");
+        }
+    }
 
-
-console.log("jbh")
+}
