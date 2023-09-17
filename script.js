@@ -28,10 +28,11 @@ function validateNumber() {
     }
 
 }
-document.querySelector(".calculate").addEventListener("click", function () {
+const form = document.querySelector("form");
+form.addEventListener("submit", function () {
     let inputFields = document.querySelectorAll("input");
     for (const inputField of inputFields) {
-        if (inputField.value=="") {
+        if (inputField.value == "") {
             inputField.classList.add("errorBox")
         }
     }
