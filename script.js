@@ -15,11 +15,6 @@ document.querySelector(".calculate").addEventListener("click", function (e) {
     const SH = document.querySelector("#sh")
     const AR = document.querySelector("#ar")
     const area = (RU.value / (PE.value * SH.value)) * AR.value;
-    console.log(RU.value)
-    console.log(PE.value)
-    console.log(SH.value)
-    console.log(AR.value)
-    console.log(area)
     document.querySelector(".result").innerHTML = `The result is ${area}`
 })
 function validateNumber() {
@@ -33,3 +28,12 @@ function validateNumber() {
     }
 
 }
+document.querySelector(".calculate").addEventListener("click", function () {
+    let inputFields = document.querySelectorAll("input");
+    for (const inputField of inputFields) {
+        if (inputField.value=="") {
+            inputField.classList.add("errorBox")
+        }
+    }
+})
+

@@ -75,3 +75,6 @@ input {
 .result {
   color: white;
 }
+.errorBox {
+  background-color: rgb(182, 103, 103);
+}
