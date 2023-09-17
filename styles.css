@@ -1,3 +1,7 @@
+:root {
+  --error-color: rgb(182, 103, 103);
+}
+
 body {
   align-items: center;
   background-color: #f9f9f9;
@@ -74,4 +78,7 @@ input {
 }
 .result {
   color: white;
+}
+.errorBox {
+  background-color: var(--error-color);
 }
