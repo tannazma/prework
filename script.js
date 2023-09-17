@@ -18,8 +18,8 @@ document.querySelector(".calculate").addEventListener("click", function (e) {
     document.querySelector(".result").innerHTML = `The result is ${area}`
 })
 function validateNumber() {
-    let inputFields = document.querySelectorAll("input");
-    let invalidChars = /[^0-9]/
+    const inputFields = document.querySelectorAll("input");
+    const invalidChars = /[^0-9]/
     for (const inputField of inputFields) {
         const isValueInvalid = invalidChars.test(inputField.value)
         if (isValueInvalid) {
