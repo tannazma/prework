@@ -40,7 +40,7 @@ submitButton.addEventListener("click", function () {
     for (const inputField of inputFields) {
         if (inputField.value === "") {
             inputField.classList.add("errorBox");
-            const errorMessage = inputField.parentElement.querySelector(".error-message-color");
+            const errorMessage = inputField.parentElement.querySelector(".error-message");
             errorMessage.innerHTML = "Please write a number"
         }
     }
@@ -50,7 +50,7 @@ for (const inputField of inputFields) {
     inputField.addEventListener("input", function () {
         if (inputField.value !== "") {
             inputField.classList.remove("errorBox");
-            const errorMessage = inputField.parentElement.querySelector(".error-message-color");
+            const errorMessage = inputField.parentElement.querySelector(".error-message");
             errorMessage.innerHTML = ""
         }
     })
