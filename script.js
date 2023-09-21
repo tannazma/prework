@@ -1,6 +1,3 @@
-function calculateEnergy(e) {
-    console.log(document.querySelector("#ru").value)
-}
 const submitButton = document.querySelector(".calculate")
 submitButton.addEventListener("click", function (e) {
     e.preventDefault()
