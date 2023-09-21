@@ -2,22 +2,21 @@
 
 ## About this little project
 
-This project utilizes certain inputs to calculate the necessary surface area (in m²) required to produce sufficient solar energy with optimal efficiency. The website is designed for both individuals and businesses interested in installing solar panels for their homes or offices, according to their unique circumstances.
+This project uses certain inputs to calculate the required surface area (in m²), necessary for producing sufficient solar energy with optimal efficiency. The website is designed for both individuals and businesses interested in installing solar panels for their homes or offices, tailored to their unique circumstances.
 
 ## The Challenges I Faced:
 
 - Show the result `Needed Area = (RU / (PE * SH)) * AR` to the user when user clicks on calculate button
-- Accept valid charactes for all inputs
-- Show the result only when inputs are not EMPTY
-- Add error message for empty inputs
-- Remove Error Message and Red box when user type sth and click on submit
-- Remove red box and error message when user is typing in input
-- Remove the red box and error when only the input is number
-
+- Accepting valid characters for all inputs
+- Showing results only when inputs are not EMPTY
+- Adding error messages for empty inputs
+- Removing error messages and the 'red box' when a user types something and clicks on 'Submit'
+- Removing the red box and error message when a user is typing in input
+- Removing the red box and error when the input is only a number
 
 ## First Challenge
 
-For the fist challenge, I fix this by writing a call back function:
+For the first challenge, I resolved it by writing a callback function:
 
 ```js
 document.querySelector(".calculate").addEventListener("click", function (e) {
@@ -27,17 +26,17 @@ document.querySelector(".calculate").addEventListener("click", function (e) {
 });
 ```
 
-Added `  e.preventDefault` to make form work. But adding CSS was the easiest part for me, I was also inspired by [Codepen.io](https://codepen.io/)
+I added `e.preventDefault()`; to make the form work. Adding CSS was the easiest part for me. I drew inspiration from [Codepen.io](https://codepen.io/)
 
 ## Second Challenge
 
-For accepting valid chars in all inputs, First I used
+For accepting valid characters in all inputs, I first used:
 
 ```js
-pattern = "d*";
+pattern = "\d*";
 ```
 
-and `type="text"` for the inputs and `oninput="validateNumber()"` and here was the function to validate inputs:
+I used `type="text"` for the inputs and `oninput="validateNumber()"`. The function to validate inputs was:
 
 ```js
 function validateNumber() {
@@ -52,9 +51,9 @@ function validateNumber() {
 }
 ```
 
-But it worn't work, and other invalid chars like `-` and `+` accepted as input while I used `type="number"` is also didn't work at all.
+However, it didn't work. Other invalid characters like `-` and `+` were accepted as input. When I used `type="number"`, it didn't work at all.
 
-And Also another challenge was I couldn't use `addEventListener("submit")` and at the same time the inputs accept number as a valid input inside, so I had to used `click` as an `addEventListener` when the `calculate` button is clicked:
+Another challenge was that I couldn't use `addEventListener("submit")` and simultaneously have the inputs accept a number as valid input. So I had to use `click` as an `addEventListener` when the calculate button was clicked:
 
 ```js
 document.querySelector(".calculate").addEventListener("click", function () {
@@ -67,9 +66,9 @@ document.querySelector(".calculate").addEventListener("click", function () {
 });
 ```
 
-Also added some styles on `errorBox` and `result` classes to perform form validation.
+I also added some styles to the `errorBox` and `result` classes to perform form validation.
 
-Then I used `submit` to make form work when user submit the form not just clicks on the button:
+Eventually, I attempted to use `submit` to make the form work when the user submitted the form, not just clicked on the button:
 
 ```js
 const form = document.querySelector("form");
@@ -83,7 +82,7 @@ form.addEventListener("submit", function () {
 }
 ```
 
-But it won't work properly and I changd to using
+However, this didn't work properly and I switched back to using
 
 ```js
 document.querySelector(".calculate").addEventListener("click", function () {....}
@@ -93,7 +92,7 @@ I don't know even now why is that!!!
 
 ### Good Points
 
-- During this project I learned how to use CSS Variable:
+- During this project, I learned how to use CSS Variables:
 
 ```js
 :root {
@@ -108,7 +107,7 @@ I don't know even now why is that!!!
 
 ## Third Challenge
 
-For the Third challenge, I nedded to use `for` loop to get all inputs and add the value of all inputFields just an empty string and the n return when tha value of the inputs are empty string just the for loop ends :
+For the third challenge, I needed to use a `for` loop to collect all input fields. When the value of the inputs equals an empty string, the loop ends:
 
 ```js
 const inputFields = document.querySelectorAll("input");
@@ -118,9 +117,10 @@ for (const inputField of inputFields) {
   }
 }
 ```
+
 ## Fourth Challenge
 
-For the 4th challeng, I needed to change `HTML` configuration, and pput `input` and added `span` for error message inside `label` and then add `innerHTML` for `errorMessage` class for `span` to write `Please write a number`:
+For the fourth challenge, I modified the HTML code by adding a `span` tag for error messages inside the `label` tag. Then I used `innerHTML` for the `errorMessage` class's `span` to display `Please write a number`:
 
 ```js
 const errorMessage = inputField.parentElement.querySelector(".error-message");
@@ -131,7 +131,7 @@ And add `color` to the error class.
 
 ## Fifth Challenge
 
-For the 5th challeng, I just needed to add an `else` inside form function:
+For the fifth challenge, all I needed to do was include an `else` clause inside the form function:
 
 ```js
 else {
@@ -140,9 +140,10 @@ else {
      errorMessage.innerHTML = ""
         }
 ```
+
 ## Sixth Challenge
 
-The 6th challenge was complecated to me, cause I needed to use another `addEventListener` when user `input` sth:
+The sixth challenge proved to be complex for me, as it required another `addEventListener` when the user enters an input:
 
 ```js
 const inputFields = document.querySelectorAll("input");
@@ -156,11 +157,11 @@ for (const inputField of inputFields) {
 }
 ```
 
-- It was the first time for me to use `parentElement` because I wanted to select error message span that was wraped in label, and I couldn't understand which span we are refering to, so I needed to use `parentElement` to select and input from the label parent then select span from that specific label to remove span class in javascript.
+It was my first time using `parentElement` as I wanted to select error message spans that were wrapped in labels. I had difficulty determining which span we were referring to, so I needed to use `parentElement` to select an input from the parent label, then select the span from that specific label to remove the span class in JavaScript.
 
 ## Last Challenge
 
-And for solving the last challenge to remove red box and error message when user is typing only number, I neede to add `if` condition including if the input values are not an empty string remove errorBox class and then put an empty string as error message like befor but all this should be wrapped in `if` element:
+To solve the final challenge—removing the red box and error message when a user is typing a number only—I had to add an `if` condition. If the input values are not empty strings, the code removes the 'errorBox' class and inserts an empty string as an error message. All of this is wrapped in an `if` statement:
 
 ```js
 if (inputField.value !== "") {
@@ -171,6 +172,7 @@ if (inputField.value !== "") {
 ```
 
 ## Final Thoughts
-I know the projects needs more validation and more work on that, but I hope that is enough to be a prework.
 
-I hope you understand all my notes here, otherwise you can always ask me if some parts of that is not clear to you :)
+I acknowledge that the project needs further validation and work, but I hope it's sufficient to qualify as prework.
+
+If you don't understand any of my notes, feel free to ask for clarifications. :)
