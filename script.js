@@ -1,10 +1,3 @@
-let requiredEnergyUnitsPerWeek
-let PotentialEnergyUnitPerPanelPerWeek
-let percentageOfSunHours
-let areaPerSolarPanelInM2
-
-
-
 function calculateEnergy(e) {
     console.log(document.querySelector("#ru").value)
 }
@@ -24,8 +17,6 @@ submitButton.addEventListener("click", function (e) {
     }
     document.querySelector(".result").innerHTML = `The result is ${area}`
 })
-
-
 function validateNumber() {
     const inputFields = document.querySelectorAll("input");
     const invalidChars = /[^0-9]/
@@ -56,6 +47,5 @@ for (const inputField of inputFields) {
             errorMessage.innerHTML = ""
         }
     })
-    inputFields.forEach(inputField => inputField.value = "")
 }
 
